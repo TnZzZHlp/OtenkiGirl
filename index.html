@@ -440,6 +440,7 @@
                     console.log('ServiceWorker Failed')
                 })
             }
+
             const $q = (s) => document.querySelectorAll(s);
             const escapeHtml = (unsafe) => (unsafe || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
             const replaceLanguage = (lang, t) => {
@@ -528,12 +529,40 @@
                 Object.entries(wishes).forEach(([id, wish]) => {
                     createItem(wish, id);
                 });
+
+                // 添加网络状态检测和反馈
+                if (!navigator.onLine) {
+                    console.log('网络连接已断开，使用本地数据');
+                    return;
+                }
+
+                // 尝试从服务器加载数据（如果已经实现了API）
+                try {
+                    fetch('/api/wishes')
+                        .then(response => {
+                            if (!response.ok) throw new Error('网络请求失败');
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('成功从服务器加载数据');
+                            // 处理服务器数据...
+                        })
+                        .catch(err => {
+                            console.log('从服务器加载数据失败，使用本地数据', err);
+                            // 这里不需要显示错误，因为已经加载了本地数据
+                        });
+                } catch (e) {
+                    console.log('尝试加载服务器数据时出错', e);
+                    // 同样，这里不需要额外处理，因为已经加载了本地数据
+                }
             }
 
             const submitCheck = (value) => {
                 if (!value.contact) return curLang.empty_contact;
                 if (!value.reason) return curLang.empty_reason;
+                return null; // 明确返回null表示验证通过
             }
+
             const val = () => {
                 const v = {};
                 [...$q('[data-name]')].forEach(x => v[x.dataset.name] = x.value);
