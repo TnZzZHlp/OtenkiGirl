@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>100%晴天女孩</title>
@@ -25,7 +26,8 @@
             max-width: 980px;
         }
 
-        .header-pic, .left-pic {
+        .header-pic,
+        .left-pic {
             display: block;
             width: 100%
         }
@@ -66,7 +68,8 @@
                 grid-template-areas: "head" "main";
             }
 
-            .header-pic, .left-pic {
+            .header-pic,
+            .left-pic {
                 display: none;
             }
 
@@ -105,7 +108,8 @@
             margin: 4px 0 8px;
         }
 
-        .add-cart:hover, .add-cart:active {
+        .add-cart:hover,
+        .add-cart:active {
             background: #ff4444;
         }
 
@@ -134,7 +138,8 @@
             resize: vertical;
         }
 
-        .text-box:focus, .text-box:active {
+        .text-box:focus,
+        .text-box:active {
             border: #ffa155 1px solid;
         }
 
@@ -285,7 +290,8 @@
             --item-top: -10px;
         }
 
-        .card-list-item:hover, .card-list-item:focus {
+        .card-list-item:hover,
+        .card-list-item:focus {
             box-shadow: 7px 7px 10px #00000047;
             transform: scale(1.04);
             position: relative;
@@ -340,195 +346,237 @@
         }
     </style>
 </head>
+
 <body>
-<div>
-    <div class="out-box">
-        <img class="top-pic" src="img/top.jpg" alt="TOP">
-        <img class="header-pic" src="img/header.jpg" alt="HEADER">
-        <img class="left-pic" src="img/left.jpg" alt="LEFT">
-        <div class="container">
-            <div class="price" data-lang="price"></div>
-            <div class="intro" data-lang="intro"></div>
-            <form class="form-main">
-                <button id="add_cart" type="button" class="add-cart">
-                    <span class="add-cart-icon">
-                        <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
-                            <path d="M289.92 768c2.56 0 632.32 0 639.36 0 14.72 0 26.24-12.8 28.16-28.8 0 0 43.52-244.48 64-413.44C1027.2 279.04 1004.8 256 961.92 256L264.96 256 253.44 156.16C251.52 140.8 240.64 128 226.56 128 224.64 128 97.92 128 97.92 128c-17.92 0-32 14.08-32 32 0 17.92 14.08 32 32 32l99.84 0 64.64 547.2C263.68 755.2 275.84 768 289.92 768zM897.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C961.92 860.8 933.12 832 897.92 832zM321.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C385.92 860.8 357.12 832 321.92 832z"></path>
-                        </svg>
-                    </span>
-                    <span class="add-cart-text" data-lang="add_cart"></span>
-                </button>
-                <div class="form-two-column">
+    <div>
+        <div class="out-box">
+            <img class="top-pic" src="img/top.jpg" alt="TOP">
+            <img class="header-pic" src="img/header.jpg" alt="HEADER">
+            <img class="left-pic" src="img/left.jpg" alt="LEFT">
+            <div class="container">
+                <div class="price" data-lang="price"></div>
+                <div class="intro" data-lang="intro"></div>
+                <form class="form-main">
+                    <button id="add_cart" type="button" class="add-cart">
+                        <span class="add-cart-icon">
+                            <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor">
+                                <path
+                                    d="M289.92 768c2.56 0 632.32 0 639.36 0 14.72 0 26.24-12.8 28.16-28.8 0 0 43.52-244.48 64-413.44C1027.2 279.04 1004.8 256 961.92 256L264.96 256 253.44 156.16C251.52 140.8 240.64 128 226.56 128 224.64 128 97.92 128 97.92 128c-17.92 0-32 14.08-32 32 0 17.92 14.08 32 32 32l99.84 0 64.64 547.2C263.68 755.2 275.84 768 289.92 768zM897.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C961.92 860.8 933.12 832 897.92 832zM321.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C385.92 860.8 357.12 832 321.92 832z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="add-cart-text" data-lang="add_cart"></span>
+                    </button>
+                    <div class="form-two-column">
+                        <label class="form-item">
+                            <span class="input-label" data-lang="time"></span>
+                            <input type="text" class="text-box" data-name="date">
+                        </label>
+                        <label class="form-item">
+                            <span class="input-label" data-lang="place"></span>
+                            <input type="text" class="text-box" data-name="place">
+                        </label>
+                    </div>
                     <label class="form-item">
-                        <span class="input-label" data-lang="time"></span>
-                        <input type="text" class="text-box" data-name="date">
+                        <span class="input-label" data-lang="contact" data-need></span>
+                        <input type="text" class="text-box" required data-name="contact">
                     </label>
                     <label class="form-item">
-                        <span class="input-label" data-lang="place"></span>
-                        <input type="text" class="text-box" data-name="place">
+                        <span class="input-label" data-lang="reason" data-need></span>
+                        <textarea rows="3" cols="20" class="text-box" data-lang-attrs="placeholder"
+                            data-lang-placeholder="prompt" required data-name="reason"></textarea>
                     </label>
-                </div>
-                <label class="form-item">
-                    <span class="input-label" data-lang="contact" data-need></span>
-                    <input type="text" class="text-box" required data-name="contact">
-                </label>
-                <label class="form-item">
-                    <span class="input-label" data-lang="reason" data-need></span>
-                    <textarea rows="3" cols="20" class="text-box" data-lang-attrs="placeholder"
-                              data-lang-placeholder="prompt" required data-name="reason"></textarea>
-                </label>
-            </form>
+                </form>
+            </div>
         </div>
+        <div id="post_list" class="card-list" data-lang-styles="place,time,reason"></div>
+        <bunny-dialog id="dialog" data-lang-attrs="ok,cancel" data-lang-ok="ok" data-lang-cancel="cancel">
+            <p id="tips"></p>
+        </bunny-dialog>
     </div>
-    <div id="post_list" class="card-list" data-lang-styles="place,time,reason"></div>
-    <bunny-dialog id="dialog" data-lang-attrs="ok,cancel" data-lang-ok="ok" data-lang-cancel="cancel">
-        <p id="tips"></p>
-    </bunny-dialog>
-</div>
-<script src="dialog.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
-<script>
-    'use strict';
-    (function () {
-        const APP_NAME = 'OtenkiGirl';
-        const LANGUAGES = ['zh-cn', 'zh-tw', 'ja', 'en'];
-        const DEFAULT_LANG = 'zh-cn';
-        const DEFAULT_LANGUAGE = {
-            "title": "100%晴天女孩",
-            "price": "￥220(含税)",
-            "intro": "100%晴女为被雨困扰的你带来阳光\uD83D\uDE06无论什么地点…",
-            "add_cart": "加入购物车",
-            "time": "希望的时间",
-            "select": "请选择吧",
-            "place": "希望放晴的地点",
-            "need": "※必填",
-            "contact": "联系方式",
-            "reason": "想要晴天的理由",
-            "prompt": "请尽量写得详细一些",
-            "empty_contact": "请填写联系方式,联系方式不用写真的哦~",
-            "empty_reason": "请填写理由",
-            "confirm": "确认提交嘛?联系方式不用写真的哦~",
-            "ok": "确定",
-            "cancel": "取消",
-            "network_error": "网络错误,请检查网络连接",
-        };
+    <script src="dialog.js"></script>
+    <script>
+        'use strict';
+        (function () {
+            const APP_NAME = 'OtenkiGirl';
+            const LANGUAGES = ['zh-cn', 'zh-tw', 'ja', 'en'];
+            const DEFAULT_LANG = 'zh-cn';
+            const DEFAULT_LANGUAGE = {
+                "title": "100%晴天女孩",
+                "price": "￥220(含税)",
+                "intro": "100%晴女为被雨困扰的你带来阳光\uD83D\uDE06无论什么地点…",
+                "add_cart": "加入购物车",
+                "time": "希望的时间",
+                "select": "请选择吧",
+                "place": "希望放晴的地点",
+                "need": "※必填",
+                "contact": "联系方式",
+                "reason": "想要晴天的理由",
+                "prompt": "请尽量写得详细一些",
+                "empty_contact": "请填写联系方式,联系方式不用写真的哦~",
+                "empty_reason": "请填写理由",
+                "confirm": "确认提交嘛?联系方式不用写真的哦~",
+                "ok": "确定",
+                "cancel": "取消",
+                "network_error": "网络错误,请检查网络连接",
+            };
 
-        let post_list = document.getElementById('post_list');
-        let dialog = document.getElementById('dialog');
-        let dialogTip = document.getElementById('tips');
+            let post_list = document.getElementById('post_list');
+            let dialog = document.getElementById('dialog');
+            let dialogTip = document.getElementById('tips');
 
-        let curLang = DEFAULT_LANGUAGE;
-        let gun = Gun('https://otenkigirl.herokuapp.com/gun');
-        let wishes = null;
+            let curLang = DEFAULT_LANGUAGE;
 
-        if ('serviceWorker' in navigator) {
-            const isRoot = location.href.indexOf(`/${APP_NAME}/`) < 0;
-            let sw = isRoot ? '/sw.js' : `/${APP_NAME}/sw.js`;
-            let scope = isRoot ? '/' : `/${APP_NAME}/`;
-            navigator.serviceWorker.register(sw, {scope}).then(() => {
-                console.log('ServiceWorker Init');
-            }).catch(() => {
-                console.log('ServiceWorker Failed')
-            })
-        }
-        const $q = (s) => document.querySelectorAll(s);
-        const escapeHtml = (unsafe) => (unsafe || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-        const replaceLanguage = (lang, t) => {
-            curLang = t;
-            document.querySelector('html').lang = lang;
-            document.title = t.title;
-            [...$q('[data-lang]')].forEach((el) => el.innerHTML = t[el.dataset.lang]);
-            [...$q('[data-need]')].forEach((el) => el.setAttribute("data-need", t.need));
-            [...$q('[data-lang-attrs]')].forEach((el) => {
-                const names = el.dataset.langAttrs || "";
-                if (!names) return;
-                (names).split(",").forEach((n) => el.setAttribute(n, t[el.getAttribute(`data-lang-${n}`)]));
-            });
-            [...$q('[data-lang-styles]')].forEach((el) => {
-                const names = el.dataset.langStyles || "";
-                if (!names) return;
-                (names).split(",").forEach((n) => el.style.setProperty(`--data-lang-text-${n}`, `'${t[n]}'`));
-            });
-        }
-        const appLang = () => {
-            const full = (localStorage['og_language'] || navigator.language || DEFAULT_LANG).toLowerCase().substring(0, 5);
-            const short = full.substring(0, 2);
-            if (LANGUAGES.includes(short)) return short;
-            else if (LANGUAGES.includes(full)) return full;
-            else return DEFAULT_LANG;
-        }
-        const initLanguage = () => new Promise(resolve => {
-            const lang = appLang();
-            if (lang === DEFAULT_LANG) {
-                replaceLanguage(lang, DEFAULT_LANGUAGE);
-                resolve();
-            } else {
-                fetch(`lang/${lang}.json`).then(r => r.json()).then(r => {
-                    replaceLanguage(lang, r);
-                    resolve();
+            // 本地存储常量
+            const STORAGE_KEY = 'otenki_wishes';
+
+            if ('serviceWorker' in navigator) {
+                const isRoot = location.href.indexOf(`/${APP_NAME}/`) < 0;
+                let sw = isRoot ? '/sw.js' : `/${APP_NAME}/sw.js`;
+                let scope = isRoot ? '/' : `/${APP_NAME}/`;
+                navigator.serviceWorker.register(sw, { scope }).then(() => {
+                    console.log('ServiceWorker Init');
                 }).catch(() => {
-                    replaceLanguage(DEFAULT_LANG, DEFAULT_LANGUAGE);
-                    resolve();
+                    console.log('ServiceWorker Failed')
                 })
             }
-        });
-
-        const ESCAPE_FIELDS = ["contact", "place", "reason", "date"];
-        const SHOW_FIELDS = ["place", "time", "reason", "datestamp"];
-        const createItem = (it, id) => {
-            let d = document.getElementById(id);
-            if (d) return;
-            d = document.createElement('div');
-            d.id = id;
-            d.classList.add("card-list-item");
-            ESCAPE_FIELDS.forEach(f => it[f] = escapeHtml(it[f]));
-            it.time = it.date;
-            it.datestamp = (new Date(it.timestamp)).toLocaleDateString();
-            let html = `<div class="item-contact"><img alt="avatar" class="avatar" src="img/avatar.jpg"/><div class="item-contact-text">${it.contact}</div></div>`;
-            SHOW_FIELDS.forEach(f => html += `<div class="item-field item-${f}">${it[f] || '--'}</div>`);
-            d.innerHTML = html;
-            post_list.prepend(d);
-        };
-
-        function loadContent() {
-            wishes = gun.get('wishes');
-            wishes.map().on((wish, id) => createItem(wish, id));
-        }
-
-        const submitCheck = (value) => {
-            if (!wishes) return curLang.network_error;
-            if (!value.contact) return curLang.empty_contact;
-            if (!value.reason) return curLang.empty_reason;
-        }
-        const val = () => {
-            const v = {};
-            [...$q('[data-name]')].forEach(x => v[x.dataset.name] = x.value);
-            return v;
-        }
-        const reset = () => [...$q('[data-name]')].forEach(x => x.value = '');
-        document.getElementById('add_cart').addEventListener('click', _ => {
-            const post = val();
-            let tip = submitCheck(post);
-            if (tip) {
-                dialogTip.innerHTML = tip;
-                dialog.cancel = "";
-                dialog.visible = true;
-                return;
+            const $q = (s) => document.querySelectorAll(s);
+            const escapeHtml = (unsafe) => (unsafe || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            const replaceLanguage = (lang, t) => {
+                curLang = t;
+                document.querySelector('html').lang = lang;
+                document.title = t.title;
+                [...$q('[data-lang]')].forEach((el) => el.innerHTML = t[el.dataset.lang]);
+                [...$q('[data-need]')].forEach((el) => el.setAttribute("data-need", t.need));
+                [...$q('[data-lang-attrs]')].forEach((el) => {
+                    const names = el.dataset.langAttrs || "";
+                    if (!names) return;
+                    (names).split(",").forEach((n) => el.setAttribute(n, t[el.getAttribute(`data-lang-${n}`)]));
+                });
+                [...$q('[data-lang-styles]')].forEach((el) => {
+                    const names = el.dataset.langStyles || "";
+                    if (!names) return;
+                    (names).split(",").forEach((n) => el.style.setProperty(`--data-lang-text-${n}`, `'${t[n]}'`));
+                });
             }
-            post.timestamp = new Date().getTime();
-            dialog.cancel = curLang.cancel;
-            dialogTip.innerText = curLang.confirm;
-            dialog.show(() => {
-                reset();
-                wishes.get(Gun.text.random()).put(post);
+            const appLang = () => {
+                const full = (localStorage['og_language'] || navigator.language || DEFAULT_LANG).toLowerCase().substring(0, 5);
+                const short = full.substring(0, 2);
+                if (LANGUAGES.includes(short)) return short;
+                else if (LANGUAGES.includes(full)) return full;
+                else return DEFAULT_LANG;
+            }
+            const initLanguage = () => new Promise(resolve => {
+                const lang = appLang();
+                if (lang === DEFAULT_LANG) {
+                    replaceLanguage(lang, DEFAULT_LANGUAGE);
+                    resolve();
+                } else {
+                    fetch(`lang/${lang}.json`).then(r => r.json()).then(r => {
+                        replaceLanguage(lang, r);
+                        resolve();
+                    }).catch(() => {
+                        replaceLanguage(DEFAULT_LANG, DEFAULT_LANGUAGE);
+                        resolve();
+                    })
+                }
             });
-        });
-        window.addEventListener("storage", (e) => {
-            if (e.key === "og_language") initLanguage().then(() => loadContent());
-        });
 
-        initLanguage().then(() => loadContent());
-    })();
-</script>
+            // 本地存储操作函数
+            const getLocalWishes = () => {
+                try {
+                    const data = localStorage.getItem(STORAGE_KEY);
+                    return data ? JSON.parse(data) : {};
+                } catch (e) {
+                    console.error('Error reading from localStorage', e);
+                    return {};
+                }
+            };
+
+            const saveLocalWish = (id, wish) => {
+                try {
+                    const wishes = getLocalWishes();
+                    wishes[id] = wish;
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
+                    return true;
+                } catch (e) {
+                    console.error('Error saving to localStorage', e);
+                    return false;
+                }
+            };
+
+            const ESCAPE_FIELDS = ["contact", "place", "reason", "date"];
+            const SHOW_FIELDS = ["place", "time", "reason", "datestamp"];
+            const createItem = (it, id) => {
+                let d = document.getElementById(id);
+                if (d) return;
+                d = document.createElement('div');
+                d.id = id;
+                d.classList.add("card-list-item");
+                ESCAPE_FIELDS.forEach(f => it[f] = escapeHtml(it[f]));
+                it.time = it.date;
+                it.datestamp = (new Date(it.timestamp)).toLocaleDateString();
+                let html = `<div class="item-contact"><img alt="avatar" class="avatar" src="img/avatar.jpg"/><div class="item-contact-text">${it.contact}</div></div>`;
+                SHOW_FIELDS.forEach(f => html += `<div class="item-field item-${f}">${it[f] || '--'}</div>`);
+                d.innerHTML = html;
+                post_list.prepend(d);
+            };
+
+            function loadContent() {
+                const wishes = getLocalWishes();
+                // 展示所有已保存的愿望
+                Object.entries(wishes).forEach(([id, wish]) => {
+                    createItem(wish, id);
+                });
+            }
+
+            const submitCheck = (value) => {
+                if (!value.contact) return curLang.empty_contact;
+                if (!value.reason) return curLang.empty_reason;
+            }
+            const val = () => {
+                const v = {};
+                [...$q('[data-name]')].forEach(x => v[x.dataset.name] = x.value);
+                return v;
+            }
+            const reset = () => [...$q('[data-name]')].forEach(x => x.value = '');
+            document.getElementById('add_cart').addEventListener('click', _ => {
+                const post = val();
+                let tip = submitCheck(post);
+                if (tip) {
+                    dialogTip.innerHTML = tip;
+                    dialog.cancel = "";
+                    dialog.visible = true;
+                    return;
+                }
+                post.timestamp = new Date().getTime();
+                dialog.cancel = curLang.cancel;
+                dialogTip.innerText = curLang.confirm;
+                dialog.show(() => {
+                    const id = 'wish_' + Date.now();
+                    if (saveLocalWish(id, post)) {
+                        reset();
+                        createItem(post, id);
+                    } else {
+                        dialogTip.innerHTML = curLang.network_error;
+                        dialog.cancel = "";
+                        dialog.visible = true;
+                    }
+                });
+            });
+            window.addEventListener("storage", (e) => {
+                if (e.key === "og_language") {
+                    initLanguage().then(() => loadContent());
+                } else if (e.key === STORAGE_KEY) {
+                    // 清空当前显示并重新加载
+                    post_list.innerHTML = '';
+                    loadContent();
+                }
+            });
+
+            initLanguage().then(() => loadContent());
+        })();
+    </script>
 </body>
+
 </html>
