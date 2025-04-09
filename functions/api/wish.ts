@@ -6,7 +6,7 @@ interface Env {
 
 // 创建表的SQL语句
 const CREATE_TABLE_SQL = `
-CREATE TABLE IF NOT EXISTS wishes (
+CREATE TABLE IF NOT EXISTS otenki_girl (
     id SERIAL PRIMARY KEY,
     contact TEXT NOT NULL,
     place TEXT,
