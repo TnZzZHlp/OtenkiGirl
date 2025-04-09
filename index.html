@@ -536,22 +536,34 @@
                     return;
                 }
 
-                // 尝试从服务器加载数据（如果已经实现了API）
-                try {
-                    fetch('/api/wishes')
-                        .then(response => {
-                            if (!response.ok) throw new Error('网络请求失败');
-                            return response.json();
-                        })
-                        .then(data => {
-                            console.log('成功从服务器加载数据');
-                        })
-                        .catch(err => {
-                            console.log('从服务器加载数据失败，使用本地数据', err);
-                        });
-                } catch (e) {
-                    console.log('尝试加载服务器数据时出错', e);
-                }
+                // 从服务器加载数据
+                fetch('/api/wish')
+                    .then(response => {
+                        if (!response.ok) throw new Error('网络请求失败');
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('成功从服务器加载数据');
+                        if (Array.isArray(data)) {
+                            // 清空现有数据以避免重复
+                            post_list.innerHTML = '';
+                            // 显示服务器数据
+                            data.forEach(wish => {
+                                // 创建唯一ID
+                                const id = `server_wish_${wish.id}`;
+                                createItem({
+                                    contact: wish.contact,
+                                    place: wish.place,
+                                    date: wish.date,
+                                    reason: wish.reason,
+                                    timestamp: new Date(wish.timestamp).getTime()
+                                }, id);
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.log('从服务器加载数据失败，使用本地数据', err);
+                    });
             }
 
             const submitCheck = (value) => {
@@ -579,8 +591,30 @@
                 dialog.cancel = curLang.cancel;
                 dialogTip.innerText = curLang.confirm;
                 dialog.show(() => {
+                    // 首先保存到本地
                     const id = 'wish_' + Date.now();
                     if (saveLocalWish(id, post)) {
+                        // 尝试提交到服务器
+                        if (navigator.onLine) {
+                            fetch('/api/wish', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(post)
+                            })
+                                .then(response => {
+                                    if (!response.ok) throw new Error('提交到服务器失败');
+                                    return response.json();
+                                })
+                                .then(data => {
+                                    console.log('成功提交到服务器', data);
+                                    // 在此可以处理服务器的响应，例如更新本地ID
+                                })
+                                .catch(err => {
+                                    console.log('提交到服务器失败，已保存到本地', err);
+                                });
+                        }
                         reset();
                         createItem(post, id);
                     } else {
