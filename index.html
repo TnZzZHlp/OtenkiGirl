@@ -430,17 +430,6 @@
             // 本地存储常量
             const STORAGE_KEY = 'otenki_wishes';
 
-            if ('serviceWorker' in navigator) {
-                const isRoot = location.href.indexOf(`/${APP_NAME}/`) < 0;
-                let sw = isRoot ? '/sw.js' : `/${APP_NAME}/sw.js`;
-                let scope = isRoot ? '/' : `/${APP_NAME}/`;
-                navigator.serviceWorker.register(sw, { scope }).then(() => {
-                    console.log('ServiceWorker Init');
-                }).catch(() => {
-                    console.log('ServiceWorker Failed')
-                })
-            }
-
             const $q = (s) => document.querySelectorAll(s);
             const escapeHtml = (unsafe) => (unsafe || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
             const replaceLanguage = (lang, t) => {
