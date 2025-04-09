@@ -2,7 +2,7 @@ import { Client } from "@neondatabase/serverless";
 
 // 创建表的SQL语句
 const CREATE_TABLE_SQL = `
-CREATE TABLE IF NOT EXISTS otenki_girl (
+CREATE TABLE IF NOT EXISTS wishes (
     id SERIAL PRIMARY KEY,
     contact TEXT NOT NULL,
     place TEXT,
