@@ -1,9 +1,5 @@
 import { Client } from "@neondatabase/serverless";
 
-interface Env {
-    DATABASE_URL: string;
-}
-
 // 创建表的SQL语句
 const CREATE_TABLE_SQL = `
 CREATE TABLE IF NOT EXISTS otenki_girl (
