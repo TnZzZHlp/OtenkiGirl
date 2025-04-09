@@ -1,0 +1,22 @@
+{
+  "name": "otenki-girl",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "dialog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TnZzZHlp/OtenkiGirl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TnZzZHlp/OtenkiGirl/issues"
+  },
+  "homepage": "https://github.com/TnZzZHlp/OtenkiGirl#readme",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
+  }
+}
