@@ -1,5 +1,4 @@
 -- 晴天女孩应用的数据库结构
-
 -- 用户愿望表
 CREATE TABLE IF NOT EXISTS wishes (
     id SERIAL PRIMARY KEY,            -- 自增主键
