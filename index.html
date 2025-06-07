@@ -537,8 +537,10 @@
                             // 清空现有数据以避免重复
                             post_list.innerHTML = '';
 
-                            // 从新到旧顺序显示数据
-                            data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                            // 排序数据，按时间降序
+                            data.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+                            console.log('排序后的数据:', data);
 
                             // 显示服务器数据
                             data.forEach(wish => {
