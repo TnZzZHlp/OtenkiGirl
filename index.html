@@ -509,7 +509,7 @@
                 let html = `<div class="item-contact"><img alt="avatar" class="avatar" src="img/avatar.jpg"/><div class="item-contact-text">${it.contact}</div></div>`;
                 SHOW_FIELDS.forEach(f => html += `<div class="item-field item-${f}">${it[f] || '--'}</div>`);
                 d.innerHTML = html;
-                post_list.prepend(d);
+                post_list.appendChild(d);
             };
 
             function loadContent() {
@@ -539,8 +539,6 @@
 
                             // 排序数据，按时间降序
                             data.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-
-                            console.log('排序后的数据:', data);
 
                             // 显示服务器数据
                             data.forEach(wish => {
