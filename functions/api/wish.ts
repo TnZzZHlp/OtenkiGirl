@@ -68,8 +68,19 @@ export async function onRequest(context) {
             } else {
                 // 获取所有愿望，按时间戳倒序排列
                 const result = await client.query(
-                    "SELECT * FROM wishes ORDER BY timestamp DESC LIMIT 100"
+                    "SELECT * FROM wishes ORDER BY timestamp DESC"
                 );
+
+                // 对联系信息脱敏
+                result.rows.forEach((wish) => {
+                    if (wish.contact) {
+                        wish.contact = wish.contact.replace(
+                            /(.{3}).+(.{3})/,
+                            "$1***$2"
+                        );
+                    }
+                });
+
                 return jsonResponse(result.rows);
             }
         } else if (request.method === "POST") {
